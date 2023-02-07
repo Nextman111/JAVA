@@ -78,6 +78,7 @@ public class main {
             year = userImputInt();
             if (year < 0 ){
                 System.out.println("Введите целое число: ");
+                year = -1;
             }
         }
 
@@ -88,7 +89,7 @@ public class main {
         System.out.printf("Год %d %s %n", year, (leap_year) ? "високосный" : "не високосный");
     }
 
-    private static void task1() {
+    public static void task1() {
         // Задать одномерный массив и найти в нем минимальный и максимальный элементы
         int[] array = new int[10];
         Random random = new Random();
