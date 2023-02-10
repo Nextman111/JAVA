@@ -1,6 +1,7 @@
 package seminar5;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class homework5 {
     public static void main(String[] args) {
@@ -10,28 +11,98 @@ public class homework5 {
 
     private static void employersList() {
         /**Пусть дан список сотрудников:
-         Иван Иванов
-         Светлана Петрова
-         Кристина Белова
-         Анна Мусина
-         Анна Крутова
-         Иван Юрин
-         Петр Лыков
-         Павел Чернов
-         Петр Чернышов
-         Мария Федорова
-         Марина Светлова
-         Мария Савина
-         Мария Рыкова
-         Марина Лугова
-         Анна Владимирова
-         Иван Мечников
-         Петр Петин
-         Иван Ежов
+            Иван Иванов
+            Светлана Петрова
+            Кристина Белова
+            Анна Мусина
+            Анна Крутова
+            Иван Юрин
+            Петр Лыков
+            Павел Чернов
+            Петр Чернышов
+            Мария Федорова
+            Марина Светлова
+            Мария Савина
+            Мария Рыкова
+            Марина Лугова
+            Анна Владимирова
+            Иван Мечников
+            Петр Петин
+            Иван Ежов
          Написать программу, которая найдет и выведет повторяющиеся имена с количеством повторений.
          Отсортировать по убыванию популярности.
          * */
+        String employersText = new String("Иван Иванов\n" +
+                "Светлана Петрова\n" + "Кристина Белова\n" + "Анна Мусина\n" + "Анна Крутова\n" +
+                "Иван Юрин\n" + "Петр Лыков\n" + "Павел Чернов\n" + "Петр Чернышов\n" +
+                "Мария Федорова\n" + "Марина Светлова\n" + "Мария Савина\n" + "Мария Рыкова\n" +
+                "Марина Лугова\n" + "Анна Владимирова\n" + "Иван Мечников\n" + "Петр Петин\n" +
+                "Иван Ежов\n");
 
+        ArrayList<String[]> employers = new ArrayList<>();
+
+        addEmployersFromText(employersText, employers);
+
+//        printEmployers(employers);
+
+        findeDuplicateName(employers);
+    }
+
+    private static void findeDuplicateName(ArrayList<String[]> employers) {
+        HashMap<String, Integer> nameCount = new HashMap<>();
+        if (employers.size()>1){
+            for(String[] item : employers){
+                if(nameCount.containsKey(item[0])){
+                    nameCount.put(item[0], (nameCount.get(item[0]) + 1));
+                } else {
+                    nameCount.put(item[0], 1);
+                }
+            }
+        } else {
+            System.out.println("Список слишком мал.");
+        }
+
+        nameCount = nameCount.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .collect(Collectors
+                        .toMap(Map.Entry::getKey,
+                                Map.Entry::getValue,
+                                (e1, e2) -> e1,
+                                LinkedHashMap::new));
+
+        System.out.println(nameCount);
+    }
+
+    private static void addEmployersFromText(String employersText, ArrayList<String[]> employers) {
+        if (employersText.isBlank()){
+            System.out.println("Список сотрудников пуст");
+        } else {
+            String[] employersSplitText = employersText.split("\\r?\\n|\\r");
+            for(String item : employersSplitText){
+                addEmployersHandler(item, employers);
+            }
+        }
+        System.out.println();
+    }
+
+    private static void addEmployersHandler(String item, ArrayList<String[]> employers) {
+        String[] itemSplit = item.trim().split(" ");
+        if (itemSplit.length == 2) {
+            employers.add(itemSplit);
+            System.out.printf("Добавлена запись %s%n", item);
+        } else {
+            System.out.printf("Запись не добавлена. Некорректный формат записи %s%n", item);
+        }
+    }
+
+    private static void printEmployers(ArrayList<String[]> employers) {
+        for (var item: employers) {
+            for(String text: item){
+                System.out.printf("%s ", text);
+            }
+            System.out.printf("%n");
+        }
     }
 
     private static void phoneBook() {
