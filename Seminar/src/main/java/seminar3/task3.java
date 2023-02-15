@@ -10,8 +10,8 @@ public class task3 {
 //        task2();
         task3();
     }
+    /**1. Пусть дан произвольный список целых чисел, удалить из него четные числа (в языке уже есть что-то готовое для этого)*/
     private static void task1() {
-        /**1. Пусть дан произвольный список целых чисел, удалить из него четные числа (в языке уже есть что-то готовое для этого)*/
         List<Integer> list = new ArrayList<>();
         Random random = new Random();
         int listLength = 10;
@@ -27,8 +27,8 @@ public class task3 {
         System.out.println(list);
 
     }
+    /**2. Задан целочисленный список ArrayList. Найти минимальное, максимальное и среднее арифметическое из этого списка.*/
     private static void task2() {
-        /**2. Задан целочисленный список ArrayList. Найти минимальное, максимальное и среднее арифметическое из этого списка.*/
         List<Integer> list = new ArrayList<>();
         Random random = new Random();
         int listLength = 10;
@@ -47,8 +47,8 @@ public class task3 {
 
     }
 
+    /**3. Пройти по списку из задания 2 с урока и удалить повторяющиеся элементы.*/
     private static void task3() {
-        /**3. Пройти по списку из задания 2 с урока и удалить повторяющиеся элементы.*/
         String[] solarSystemPlanets = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
 
         Random random = new Random();
