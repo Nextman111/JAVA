@@ -38,12 +38,12 @@ public class task1 {
 
     }
 
-    public static void task2() {
         /**
          *  Напишите метод, который составит строку,
          *  состоящую из 100 повторений слова TEST и метод,
          *  который запишет эту строку в простой текстовый файл,
          *  обработайте исключения.**/
+    public static void task2() {
         String fileName = "task2.txt";
         String text = "TEST";
         String repeatText = repeatString(text, 100);
@@ -58,9 +58,9 @@ public class task1 {
         return text.equals(textReverse);
     }
 
-    public static void task1(){
         /**
          * Напишите метод, который принимает на вход строку (String) и определяет является ли строка палиндромом (возвращает boolean значение).**/
+    public static void task1(){
         System.out.println("Введите фразу для проверки на палиндром: ");
 
         Scanner scanner = new Scanner(System.in);

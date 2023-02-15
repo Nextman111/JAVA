@@ -8,9 +8,9 @@ public class homework4 {
 //        task2();
     }
 
-    private static void task2() {
         /**2. Пусть дан LinkedList с несколькими элементами.
          * Реализуйте метод, который вернет “перевернутый” список.*/
+    private static void task2() {
         LinkedList<Integer> linkedList = new LinkedList<>();
         Random random = new Random();
         int lengthList = 10;
@@ -44,12 +44,12 @@ public class homework4 {
     }
 
 
-    private static void task1() {
         /**1. Реализовать консольное приложение, которое:
          Принимает от пользователя и “запоминает” строки.
          Если введено print, выводит строки так,
          чтобы последняя введенная была первой в списке, а первая - последней.
          Если введено revert, удаляет предыдущую введенную строку из памяти.*/
+    private static void task1() {
         String userString;
         LinkedList<String> linkedList = new LinkedList<>();
 

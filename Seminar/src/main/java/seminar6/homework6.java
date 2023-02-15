@@ -3,7 +3,6 @@ package seminar6;
 import java.util.*;
 import java.util.regex.Pattern;
 
-public class homework6 {
     /**
      * Подумать над структурой класса Ноутбук для магазина техники
      * - выделить поля и методы. Реализовать в java.
@@ -12,6 +11,7 @@ public class homework6 {
      * и вывести проходящие по условиям.
      * Например, спросить у пользователя минимальный размер оперативной памяти
      * или конкретный цвет. Выводить только те ноутбуки, что соответствуют условию**/
+public class homework6 {
     public static void main(String[] args) {
         int laptopGenerateLength = 10; // Сколько записей нужно сгенерировать
         List<Laptop> laptopList = laptopGenerator(laptopGenerateLength);
