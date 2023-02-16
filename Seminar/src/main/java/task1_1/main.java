@@ -20,7 +20,7 @@ public class main {
     private static void task3() {
         int[] nums = new int[]{3, 2, 3, 3, 3, 5, 7, 3, 6, 4, 4, 3};
         int val = 3;
-
+        
         // Вывод текущего массива
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
