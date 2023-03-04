@@ -31,6 +31,7 @@ public class task1 {
         try (FileWriter fw = new FileWriter(file);
              BufferedWriter bw = new BufferedWriter(fw)){
             bw.write(data);
+            bw.flush();
             System.out.println("Файл " + file.getCanonicalPath() + " записан");
         } catch (IOException e) {
             throw new RuntimeException(e);
